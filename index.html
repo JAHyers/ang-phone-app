@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Jared Phone Gallery App</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
   <script src="js/lib/angular.min.js"></script>
   <script src="js/controllers.js"></script>
 </head>
@@ -28,10 +29,16 @@
       <div class="col-md-10">
 
          <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+            <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+
+         <!--<ul class="phones">
             <li ng-repeat="phone in phones | filter:query | orderBy: orderProp" class="thumbnail">
                <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
                <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-               <p>{{phone.snippet}}</p>
+               <p>{{phone.snippet}}</p>-->
             </li>
          </ul>
 

@@ -15,5 +15,5 @@ angular.module('phonecatApp', [])
       }
    ];
 
-   $scope.name = "Jared";
+   $scope.name = "Jared Phone Gallery App";
 });

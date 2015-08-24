@@ -1,6 +1,6 @@
 angular.module('phonecatApp', [])
 .controller('PhoneListCtrl', function($scope, $http){
-   $http.get('phones/phones.json').success(function(data){
+   $http.get('js/phones/phones.json').success(function(data){
       $scope.phones = data;
    });
 

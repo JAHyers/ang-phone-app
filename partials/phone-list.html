@@ -1,15 +1,3 @@
-<!doctype html>
-<html lang="en" ng-app="phonecatApp">
-<head>
-  <meta charset="utf-8">
-  <title>Jared Phone Gallery App</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/app.css" rel="stylesheet">
-  <script src="js/lib/angular.min.js"></script>
-  <script src="js/controllers.js"></script>
-</head>
-<body ng-controller="PhoneListCtrl">
-
 <div class="jumbotron text-center">
    <h1>{{title.name}}</h1>
    <h4>{{title.dev}}</h4>
@@ -40,19 +28,9 @@
             <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
             <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
             <p>{{phone.snippet}}</p>
-
-         <!--<ul class="phones">
-            <li ng-repeat="phone in phones | filter:query | orderBy: orderProp" class="thumbnail">
-               <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-               <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-               <p>{{phone.snippet}}</p>-->
             </li>
          </ul>
 
       </div>
    </div>
 </div>
-
-
-</body>
-</html>

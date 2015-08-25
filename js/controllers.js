@@ -4,7 +4,13 @@ angular.module('phonecatApp', [])
       $scope.phones = data;
    });
 
-   $scope.orderProp = 'age';
+   $scope.orderProp = 'name';
 
-   $scope.name = "Jared Phone Gallery App";
+   $scope.title = {
+      name: "Phone Gallery App",
+      dev: "Jared Hyers",
+      version: '1.0',
+      tech: "Angular, HTML, CSS, Bootstrap",
+   }
+
 });

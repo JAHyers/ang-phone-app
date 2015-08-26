@@ -16,7 +16,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
    }]);
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
    function($scope, $routeParams, $http){
-      $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data){
+      $http.get('js/phones/' + $routeParams.phoneId + '.json').success(function(data){
          $scope.phone = data;
+         $scope.mainImageUrl = data.images[0];
       });
+      $scope.setImage = function(imageUrl){
+         $scope.mainImageUrl = imageUrl;
+      };
    }]);

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>Jared Phone Gallery App</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+<div class="jumbotron text-center">
+   <h1>{{title.name}}</h1>
+   <h4>{{title.dev}}</h4>
+   <h4>{{title.version}}</h4>
+   <h4>{{title.tech}}</h4>
+</div>
+
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-2">
+
+         <label>Search:</label> <input ng-model="query">
+         <label>Sort By:</label>
+         <select ng-model="orderProp">
+            <option value="name">Alphabetical
+            </option>
+            <option value="age">Newest
+            </option>
+            <option value="-age">Oldest</option>
+         </select>
+         <p>Total number of phones: {{phones.length}}</p>
+
+      </div>
+      <div class="col-md-10">
+
+         <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+            <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+            <p>{{phone.snippet}}</p>
+
+            </li>
+         </ul>
+
+      </div>
+   </div>
+</div>
+
+
+</body>
+</html>

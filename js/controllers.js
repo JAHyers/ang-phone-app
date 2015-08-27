@@ -12,11 +12,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
          tech: "Angular, HTML, CSS, Bootstrap",
       }
    }]);
-   
+
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
    function($scope, $routeParams, Phone){
       $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone){
-         $scope.mainImageUrl = data.images[0];
+         $scope.mainImageUrl = phone.images[0];
       });
       $scope.setImage = function(imageUrl){
          $scope.mainImageUrl = imageUrl;

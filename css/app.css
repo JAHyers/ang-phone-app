@@ -54,7 +54,7 @@ ul.phone-thumbs img {
 
 ul.specs {
   clear: both;
-  margin: 0;
+  margin-left: 5px;
   padding: 0;
   list-style: none;
 }
